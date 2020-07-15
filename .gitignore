@@ -1,0 +1,8 @@
+__pycache__
+.vscode
+.DS_store
+*.zip
+*.docx
+*.pdf
+.ipyng_checkpoints
+*.csv
