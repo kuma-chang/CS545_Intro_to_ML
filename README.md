@@ -1,1 +1,3 @@
-#This is a directory for CS545
+## Intro to Machine Learning
+
+#### Michael Chang
