@@ -6,4 +6,8 @@ __pycache__
 *.pdf
 .ipyng_checkpoints
 *.csv
+<<<<<<< HEAD
 *.ipynb
+=======
+*.swp
+>>>>>>> 011921652f816a0434107ece5a19f436a8d4a1a3
