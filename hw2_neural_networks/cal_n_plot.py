@@ -7,9 +7,9 @@ import seaborn as sn                            # Load the seaborn libraries wit
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
-################################
+##################################################
 # File name switch for each experiment
-################################
+##################################################
 def e1_save_file_name_switch(num_of_hidden): 
     switcher = { 
         20: "h_20_accur_plot", 
@@ -57,9 +57,9 @@ def e3_cm_save_file_name_switch(momentum):
     return switcher.get(momentum, "nothing")
 
 
-################################
+##################################################
 # Save confusion matrix for each experiment
-################################
+##################################################
 def e1_save_confusion_matrix(model, input_data, label, num_of_hidden):
     prediction_table = []
     for i in range(len(input_data)):
@@ -117,8 +117,9 @@ def e3_save_confusion_matrix(model, input_data, label, momentum):
 
     creat_n_save_heatmap(df_cm, plot_title, e3_cm_save_file_name_switch(momentum))
 
+
+# Plot the accuracy for both train and validation then save file
 def creat_n_save_plot(t_accuracy, v_accuracy, plot_title, file_name):
-    # Plot the accuracy for both train and validation then save file
     plt.figure()
     plt.xlabel("Epochs")
     plt.ylabel("Accuracy (%) ")
@@ -156,6 +157,7 @@ def creat_n_save_heatmap(df_cm, plot_title, file_name):
     plt.savefig(file_name)
     print(file_name+".png have been saved")
 
+# Dividing the data in to respectively portion, whild approximately balanced
 def data_portion(input_data, portion):
     s_input_data = input_data[input_data[:,0].argsort()]
     s_input_data = np.split(s_input_data, 10)

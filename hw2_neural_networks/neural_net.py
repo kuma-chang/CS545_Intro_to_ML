@@ -1,4 +1,4 @@
-import numpy as np                          # Load the numpy libraries with alias 'np' 
+import numpy as np                                    # Load the numpy libraries with alias 'np' 
 from cal_n_plot import sigmoid                        # Load the function for calculation and ploting that I implimented
 
 class Neural_net:
@@ -21,12 +21,14 @@ class Neural_net:
         print("\nWeights from hidden layer to output layer: ")
         print(self.h_to_o_weights)
     
+    # Prints out all the units for checking while developing
     def print_units(self):
         print("\nHidden units: ")
         print(self.hidden_units)
         print("\nOutput units: ")
         print(self.output_units)
 
+    # Calculate the accuracy according to the given input and store the result into the given table
     def cal_accuracy(self, input_data, input_label, accuracy_table):
         hit = 0
         for i in range(len(input_data)):
@@ -42,6 +44,7 @@ class Neural_net:
                 hit += 1
         accuracy_table.append(hit/len(input_data)*100)
 
+    # Forward propergation for this neural net
     def forward_propagation(self, input_data):
         self.hidden_units[1:] = sigmoid(np.dot(self.i_to_h_weights, input_data))
         self.output_units = sigmoid(np.dot(self.h_to_o_weights, self.hidden_units))
@@ -52,7 +55,6 @@ class Neural_net:
 
         error_output = np.multiply(np.multiply(self.output_units, (1-self.output_units)), (target_array - self.output_units))
         error_hidden = np.multiply(np.multiply(self.hidden_units, (1-self.hidden_units)), np.dot(error_output, self.h_to_o_weights))
-
 
         for i in range(len(self.output_units)):
             self.update_h_to_o[i] = (np.multiply(learning_rate, np.multiply(error_output[i], self.hidden_units))) + np.multiply(momentum, self.update_h_to_o[i])
