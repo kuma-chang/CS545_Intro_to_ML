@@ -11,5 +11,6 @@ We will train the model in three different learning rates: 0.00001, 0.001, 0.1 A
 **Docker commands**
 
 docker build -t cs545_hw1 .
+
 docker run -it -v ~/CS545_Intro_to_ML/hw1_perceptron/:/usr/src/app/ --rm --name=running-cs545-hw1 cs545_hw1
 
