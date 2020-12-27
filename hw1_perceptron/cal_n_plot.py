@@ -7,18 +7,18 @@ import seaborn as sn                            # Load the seaborn libraries wit
 # File name switch for accuracy plot
 def save_file_name_switch(learning_rate): 
     switcher = { 
-        0.00001: "plot_l_r_00001", 
-        0.001: "plot_l_r_001", 
-        0.1: "plot_l_r_1", 
+        0.00001: "images/plot_l_r_00001", 
+        0.001: "images/plot_l_r_001", 
+        0.1: "images/plot_l_r_1", 
     } 
     return switcher.get(learning_rate, "nothing")
 
 # File name switch for confusion matrix heatmap
 def cm_save_file_name_switch(learning_rate): 
     switcher = { 
-        0.00001: "cm_l_r_00001", 
-        0.001: "cm_l_r_001", 
-        0.1: "cm_l_r_1", 
+        0.00001: "images/cm_l_r_00001", 
+        0.001: "images/cm_l_r_001", 
+        0.1: "images/cm_l_r_1", 
     } 
     return switcher.get(learning_rate, "nothing")
 

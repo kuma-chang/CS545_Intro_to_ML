@@ -8,3 +8,5 @@ __pycache__
 *.csv
 *.ipynb
 *.swp
+cs545_hw1_env
+vim-markdown-preview.html
